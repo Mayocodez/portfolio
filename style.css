@@ -371,11 +371,10 @@ body.hover-open-enabled .nav-dropdown-wrapper:hover .dropdown-menu,
   position: relative;
 }
 
-.hero-avatar svg {
-  width: 95px;
-  height: 95px;
-  fill: #1f1f1f;
-  filter: contrast(250%) grayscale(100%);
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-title {
