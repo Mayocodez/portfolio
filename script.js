@@ -98,7 +98,7 @@ window.addEventListener('keydown', (e) => {
 
 // --- 5. Copy Email, Receipt Printer, & Radio Controls ---
 function copyEmail() {
-  navigator.clipboard.writeText('matthew@example.com');
+  navigator.clipboard.writeText('piyushsinghdhanwal@gmail.com');
   const label = document.getElementById('email-text');
   if (label) {
     label.textContent = 'Copied!';
