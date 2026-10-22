@@ -25,6 +25,36 @@ document.querySelectorAll('.nav-item, .scroll-item, .dropdown-row').forEach(el =
   el.addEventListener('mouseenter', () => playClickSound(520));
 });
 
+// Sliding hover pill behind nav items
+(function initNavHoverPill() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+
+  const pill = document.createElement('span');
+  pill.className = 'nav-hover-pill';
+  navbar.prepend(pill);
+
+  const items = navbar.querySelectorAll(':scope > .nav-item, .nav-dropdown-wrapper > .nav-item');
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const navRect = navbar.getBoundingClientRect();
+      const rect = item.getBoundingClientRect();
+      const wasHidden = !pill.classList.contains('visible');
+
+      pill.classList.toggle('no-slide', wasHidden);
+      pill.style.transform = `translate(${rect.left - navRect.left - navbar.clientLeft}px, ${rect.top - navRect.top - navbar.clientTop}px)`;
+      pill.style.width = `${rect.width}px`;
+      pill.style.height = `${rect.height}px`;
+
+      if (wasHidden) pill.getBoundingClientRect();
+      pill.classList.remove('no-slide');
+      pill.classList.add('visible');
+    });
+  });
+
+  navbar.addEventListener('mouseleave', () => pill.classList.remove('visible'));
+})();
+
 // --- 2. Misc. Dropdown Toggle Switches ---
 function toggleFeature(element, feature) {
   element.classList.toggle('off');

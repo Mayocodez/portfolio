@@ -104,11 +104,44 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
-.nav-item:hover,
-.nav-dropdown-wrapper:hover .nav-item,
 .nav-dropdown-wrapper.open .nav-item {
   background-color: #e2e2df;
   box-shadow: none;
+}
+
+.navbar {
+  position: relative;
+}
+
+.navbar > .nav-item,
+.nav-dropdown-wrapper > .nav-item {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-hover-pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease;
+}
+
+.nav-hover-pill.no-slide {
+  transition: opacity 0.2s ease;
+}
+
+.nav-hover-pill.visible {
+  opacity: 1;
 }
 
 .nav-key {
