@@ -1,7 +1,7 @@
 // --- Live Visitor Presence (Supabase) ---
 // Fill these in from Supabase -> Project Settings -> API. Both values are public by design.
-const SUPABASE_URL = '';
-const SUPABASE_ANON_KEY = '';
+const SUPABASE_URL = 'https://rduzzysqmwvcpabbzwqv.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_iy1DyfBc5LxBHs7PzPzuBA_rtG-M20x';
 
 const PRESENCE_SHOWN = 3;
 
