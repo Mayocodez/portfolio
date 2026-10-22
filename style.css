@@ -498,3 +498,78 @@ body.hover-open-enabled .nav-dropdown-wrapper:hover .dropdown-menu,
     display: none;
   }
 }
+
+/* --- Live Visitor Presence --- */
+.visitor-badge {
+  position: relative;
+  cursor: default;
+  overflow: visible;
+}
+
+.visitor-badge > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.visitor-count {
+  margin-left: 2px;
+}
+
+.visitor-card {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -8px;
+  z-index: 100;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+.visitor-badge:hover .visitor-card,
+.visitor-badge:focus .visitor-card {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.visitor-card .muted {
+  color: var(--text-muted);
+}
+
+.visitor-card-flag {
+  width: 18px;
+  height: auto;
+  vertical-align: -2px;
+  border-radius: 2px;
+}
+
+.visitor-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visitor-card-meta svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
