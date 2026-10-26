@@ -55,6 +55,23 @@ document.querySelectorAll('.nav-item, .scroll-item, .dropdown-row').forEach(el =
   navbar.addEventListener('mouseleave', () => pill.classList.remove('visible'));
 })();
 
+// --- Peeking Resume Sheet on Hover over Résumé Nav Item ---
+(function initResumePeek() {
+  const resumeNav = document.getElementById('resume-nav-item');
+  const resumeSheet = document.getElementById('resume-peek-sheet');
+  if (!resumeNav || !resumeSheet) return;
+
+  resumeNav.addEventListener('mouseenter', () => {
+    if (document.body.classList.contains('hover-open-enabled')) {
+      resumeSheet.classList.add('visible');
+    }
+  });
+
+  resumeNav.addEventListener('mouseleave', () => {
+    resumeSheet.classList.remove('visible');
+  });
+})();
+
 // --- 2. Misc. Dropdown Toggle Switches ---
 function toggleFeature(element, feature) {
   element.classList.toggle('off');
@@ -64,6 +81,10 @@ function toggleFeature(element, feature) {
 
   if (feature === 'hover') {
     document.body.classList.toggle('hover-open-enabled', !isOff);
+    if (isOff) {
+      const resumeSheet = document.getElementById('resume-peek-sheet');
+      if (resumeSheet) resumeSheet.classList.remove('visible');
+    }
   } else if (feature === 'sound') {
     soundEnabled = !isOff;
   }
@@ -78,7 +99,7 @@ function handleDropdownClick(event, wrapperId) {
   }
 }
 
-// --- 3. Scroll-Spy & Smooth Section Navigation for the 17 Left Bars ---
+// --- 3. Scroll-Spy & Smooth Section Navigation ---
 const sections = document.querySelectorAll('.scroll-target');
 const scrollLines = document.querySelectorAll('#scroll-indicator .scroll-line');
 
@@ -114,19 +135,28 @@ window.addEventListener('keydown', (e) => {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     targetNav.classList.add('active');
 
+    const resumeSheet = document.getElementById('resume-peek-sheet');
+
     if (key === 's') {
       document.getElementById('socials-dropdown').classList.toggle('open');
       document.getElementById('misc-dropdown').classList.remove('open');
+      if (resumeSheet) resumeSheet.classList.remove('visible');
     } else if (key === 'm') {
       document.getElementById('misc-dropdown').classList.toggle('open');
       document.getElementById('socials-dropdown').classList.remove('open');
+      if (resumeSheet) resumeSheet.classList.remove('visible');
+    } else if (key === 'r') {
+      document.getElementById('socials-dropdown').classList.remove('open');
+      document.getElementById('misc-dropdown').classList.remove('open');
+      if (resumeSheet) resumeSheet.classList.toggle('visible');
     } else {
+      if (resumeSheet) resumeSheet.classList.remove('visible');
       targetNav.click();
     }
   }
 });
 
-// --- 5. Copy Email, Receipt Printer, & Radio Controls ---
+// --- 5. Copy Email & Radio Controls ---
 function copyEmail() {
   navigator.clipboard.writeText('piyushsinghdhanwal@gmail.com');
   const label = document.getElementById('email-text');
@@ -136,8 +166,6 @@ function copyEmail() {
   }
   playClickSound(820);
 }
-
-
 
 let radioPlaying = false;
 function toggleRadio() {
