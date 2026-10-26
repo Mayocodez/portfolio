@@ -9,7 +9,7 @@
   <link rel="icon" href="pfp.png" type="image/png">
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="hover-open-enabled">
 
@@ -29,7 +29,7 @@
       <a href="#sec-4" class="nav-item" data-key="b">
         Blog <kbd class="nav-key">b</kbd>
       </a>
-      <a href="#sec-1" class="nav-item" data-key="r">
+      <a href="Piyush Singh Resume SDE.pdf" target="_blank" class="nav-item" id="resume-nav-item" data-key="r">
         Résumé <kbd class="nav-key">r</kbd>
       </a>
 
@@ -142,8 +142,7 @@
             </svg>
           </a>
 
-          
-        <a href="#rss" class="dropdown-row">
+          <a href="#rss" class="dropdown-row">
             <div class="dropdown-left">
               <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -159,7 +158,6 @@
           </a>
         </div>
       </div>
-
 
       <!-- Misc. with Hover Dropdown -->
       <div class="nav-dropdown-wrapper" id="misc-dropdown">
@@ -273,21 +271,87 @@
         </div>
         <div class="highlight-item">
           <span class="bullet-dot"></span>
-          <span>Founding Member and Technical Lead at <a href="#sorce" class="doc-link">ConnLink</a> </span>
+          <span>Founding Member of Technical Lead at <a href="#sorce" class="doc-link">ConnLink</a> ↗</span>
         </div>
         <div class="highlight-item">
           <span class="bullet-dot"></span>
           <span>3 internships: 2 recruited, 3 return offers (incl. as co-founder &amp; founding MTS)</span>
         </div>
-
         <div class="highlight-item">
           <span class="bullet-dot"></span>
-          <span>Hackathon winner, organizer , &amp;  judge (incl. )</span>
+          <span>Recognized security disclosures across medical, public sector, &amp; venture infra</span>
+        </div>
+        <div class="highlight-item">
+          <span class="bullet-dot"></span>
+          <span>Hackathon winner, founder, &amp; judge (incl. <a href="#yc-dm" class="doc-link">YC x Google DeepMind</a> ↗)</span>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- Peeking Resume Sheet from Bottom (Triggered on Résumé Hover) -->
+  <div class="resume-peek-sheet" id="resume-peek-sheet">
+    <div class="resume-paper">
+      <h2 class="resume-paper-name">Piyush Singh</h2>
+      <div class="resume-paper-contact">
+        Software Development Engineer (SDE) Intern | Full-Stack Developer | <span class="resume-underline">piyushsinghh.in</span> | <span class="resume-underline">piyushsinghdhanwal@gmail.com</span>
+      </div>
+
+      <!-- Education Section -->
+      <div class="resume-section-heading">Education</div>
+      <div class="resume-entry">
+        <div class="resume-entry-line">
+          <span><strong>Quantum University</strong> | <em>B.Tech in Computer Software Engineering (CSE)</em> | <em>Roorkee, Uttarakhand</em></span>
+          <span>Aug. 2024 – Present</span>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="resume-section-heading">Experience</div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-line">
+          <strong>Founder &amp; Lead Developer</strong>
+          <span>Apr. 2026 – Present</span>
+        </div>
+        <div class="resume-entry-subline">
+          <span>ConnLink | <em>React, Node.js, JavaScript, CSS, REST APIs</em></span>
+          <span>Delhi, India (Hybrid)</span>
+        </div>
+        <ul class="resume-entry-bullets">
+          <li>Designed, developed, and shipped Conn, a full-stack SaaS link-in-bio platform positioned as a premium alternative to Linktree.</li>
+          <li>Grew the open-source repository to 15+ GitHub stars and 84 forks by maintaining a clean, well-documented codebase.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-line">
+          <strong>Project Admin &amp; ML Contributor</strong>
+          <span>May 2026 – Present</span>
+        </div>
+        <div class="resume-entry-subline">
+          <span>GirlScript Summer of Code (GSSoC 2026) &amp; Google Summer of Code (GSoC 2026) | <em>Python, Git, CI/CD, NLP</em></span>
+          <span>Remote</span>
+        </div>
+        <ul class="resume-entry-bullets">
+          <li>Performed code review on 70+ pull requests, resolving merge conflicts and mentoring open-source contributors.</li>
+          <li>Engineered data preprocessing pipelines and trained machine learning models for predictive analysis and NLP.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-line">
+          <strong>Data Science Intern / Web Developer</strong>
+          <span>2025 – Present</span>
+        </div>
+        <div class="resume-entry-subline">
+          <span>Samatrix Consulting Pvt. Ltd. &amp; UtsavAI | <em>Python, Pandas, NumPy, JavaScript, React</em></span>
+          <span>Remote / Roorkee, India</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Floating Bottom Radio Control -->
   <div class="radio-pill">
@@ -297,7 +361,7 @@
   </div>
 
   <!-- External JavaScript -->
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
   <script src="presence.js?v=2"></script>
 </body>
 </html>
